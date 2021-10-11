@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/Vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- 当v-if为false时，v-if指令的元素不会存在与dom中 -->
+    <h1 v-if="isShow">{{message}}</h1>
+    <!-- 而v-show是给v-show指令的元素增加一个样式:display:none -->
+    <h1 v-show="isShow">{{message}}</h1>
+  </div>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好呀! Vue",
+        isShow: false
+      }
+    })
+  </script>
+</body>
+</html>

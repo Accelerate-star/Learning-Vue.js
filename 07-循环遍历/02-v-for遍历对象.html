@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/Vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="item in info">{{item}}</li>
+    </ul>
+    
+    <br>
+    <ul>
+      <li v-for="(value, key) in info">{{key}}--{{value}}</li>
+    </ul>
+
+    <br>
+    <ul>
+      <li v-for="(value, item, index) in info">{{index}}--{{value}}--{{item}}</li>
+    </ul>
+  </div>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        info: {
+          name: "黄依依",
+          age: 19,
+          height: 184
+        }
+      }
+      
+    })
+  </script>
+</body>
+</html>

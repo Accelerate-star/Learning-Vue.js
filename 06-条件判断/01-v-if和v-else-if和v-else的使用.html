@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/Vue.js"></script>
+</head>
+<body>
+  <!-- 不经常使用，通常使用计算属性 -->
+  <div id="app">
+    <h1 v-if="score>=95">95以上</h1>
+    <h1 v-else-if="score>=90">90以上</h1>
+    <h1 v-else-if="score>=80">80以上</h1>
+    <h1 v-else>60以下</h1>
+  </div>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好呀!",
+        score: 91
+      }
+    })
+  </script>
+</body>
+</html>

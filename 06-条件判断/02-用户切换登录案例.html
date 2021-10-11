@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/Vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div v-if="form"><h2 v-if="form=true">用户账号</h2><input type="text" value="用户账号" key="username"><button @click="btnclick" >切换类型</button></div>
+    <div v-else><h2>用户邮箱</h2><input type="text" value="用户邮箱" key="email"><button @click="btnclick">切换类型</button></div>
+  </div>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        form: true
+      },
+      methods: {
+        btnclick() {
+          this.form = ! this.form
+        }
+      } 
+    })
+  </script>
+</body>
+</html>
