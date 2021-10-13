@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/Vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="letter in letters">{{letter}}</li>
+      <button @click="btnclick">按钮</button>
+    </ul>
+  </div>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        letters: ["A", "B", "C", "D"]
+      },
+      methods: {
+        btnclick() {
+          // 1、.push
+          this.letters.push("EEE"),
+          //2、.pop
+          this.letters.pop(),
+          //3、.shift
+          this.letters.shift()
+          //4、.splice
+          //4、.set
+        }
+      }
+    })
+  </script>
+</body>
+</html>
