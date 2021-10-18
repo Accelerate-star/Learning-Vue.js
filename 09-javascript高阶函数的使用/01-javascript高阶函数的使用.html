@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1、过滤器filter
+    let nums=[3, 34, 3465, 546, 555, 3]
+    let newnums = nums.filter(function (n){
+      return n<100
+    })
+    console.log(newnums)
+    //2、map函数的使用
+    let new2nums = newnums.map(function (n){
+      return n*2
+    })
+    console.log(new2nums)
+    let total = new2nums.reduce(function(prevalue, n) {
+      return prevalue + n//prevalue指上一次返回的值
+    })
+    console.log(total);
+    
+    // 链式编程
+    let numss=[3, 34, 3465, 546, 555, 3]
+    let totall = numss.filter(function(n) {
+      return n<100
+    }).map(function(n) {
+      return n*2
+    }).reduce(function(prevalue, n) {
+      return prevalue + n
+    })
+    console.log(totall)
+
+    //箭头函数
+    let numsss=[3, 34, 3465, 546, 555, 3]
+    let totalll = numsss.filter(n => n<100).map(n => n*2).reduce((prevalue, n)=> prevalue+n)
+    console.log(totalll);
+  </script>
+</body>
+</html>
