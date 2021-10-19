@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/Vue.js"></script>
+</head>
+<body>
+<!-- v-model实现双向绑定 -->
+<div id="app">
+<!-- 选一个 -->
+<select name="abc" v-model="ball">
+  <option type="checkbox" value="足球" >足球</option>
+  <option value="篮球" >篮球</option>
+  <option value="羽毛球">羽</option>
+</select>
+
+  <h2>你的爱好是: {{ball}}</h2>
+
+  <!-- 选多个 -->
+  <select name="abc" v-model="balls" multiple>
+    <option value="足球" >足球</option>
+    <option value="篮球" >篮球</option>
+    <option value="羽毛球">羽</option>
+  </select>
+  
+    <h2>你的爱好是: {{balls}}</h2>
+</div>
+  
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        ball: "足球",
+        balls:[]
+      }
+    })
+  </script>
+</body>
+</html>

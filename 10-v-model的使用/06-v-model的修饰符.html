@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/Vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- 延迟出现 -->
+    <input type="text" v-model.lazy="message">
+    <h2>{{message}}</h2>
+    <!-- 只识别数字 -->
+    <input type="text" v-model.number="message2">
+    <h2>{{message2}}</h2>
+   <!-- 去除空格 -->
+    <input type="text" v-model.trim="message3">
+    <h2>{{message3}}</h2>
+  </div>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好呀!",
+        message2: "你好呀! Vue",
+        message3: "你好呀! Vue",
+      }
+    })
+  </script>
+</body>
+</html>

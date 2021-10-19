@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/Vue.js"></script>
+</head>
+<body>
+<!-- v-model实现双向绑定 -->
+<div id="app">
+  <label for="agree">
+    <input type="checkbox" id="agree" v-model="isAgree">同意
+  </label>
+  <h2>你选择的是: {{isAgree}}</h2>
+  <button :disabled="!isAgree">下一步</button>
+
+  <input type="checkbox" value="足球" v-model="hobbies">足球
+  <input type="checkbox" value="篮球"v-model="hobbies">篮球
+  <input type="checkbox" value="羽毛球" v-model="hobbies">羽毛球
+  <input type="checkbox" value="橄榄球"v-model="hobbies">橄榄球
+  <h2>你的爱好是: {{hobbies}}</h2>
+</div>
+  
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        isAgree: false,
+        hobbies: []
+      }
+    })
+  </script>
+</body>
+</html>
