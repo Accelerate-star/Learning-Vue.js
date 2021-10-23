@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/Vue.js"></script>
+</head>
+
+<body>
+<script type="text/x-templata" id="cpn1">
+  <div>
+    <h2>{{message1}}</h2>
+    <p>{{counter}}</p>
+    <button @click="increment">+</button>
+    <button @click="decrement">-</button>
+  </div>
+</script>
+  <div id="app">
+    <cpn1></cpn1>
+    <cpn1></cpn1>
+  </div>
+  <script src="../js/Vue.js"></script>
+  <script>
+    Vue.component("cpn1", {
+      template: "#cpn1",
+      data(){
+        return{
+          message1:"你好呀!",
+          counter:0
+        }
+      },
+      methods: {
+        increment() {
+          this.counter++
+        },
+        decrement() {
+          this.counter--
+        }
+      }
+    })
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好呀!"
+      }
+      
+    })
+  </script>
+</body>
+
+</html>

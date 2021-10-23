@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/Vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <cpn :cmovies="movies" :cmessage="message"></cpn>
+</div>
+
+<template id="cpn">
+  <div>
+    <h2>{{cmovies}}</h2>
+    <p>{{cmessage}}</p>
+  </div>
+</template>
+
+  <script src="../js/Vue.js"></script>
+  <script>
+    const cpn = {
+      template:"#cpn",
+      props:["cmovies", "cmessage"],
+      // props:{
+      //   cmovies:Array,
+      //   cmessage:String
+      // },
+      // props:{
+      //   cmovies:{
+      //     type:Array,
+      //     default:"aaaa"
+      //   },
+      //   cmessage:{
+      //     type:String,
+      //     default:"bbbb"
+      //   }
+      // },
+      data() {
+        return{
+
+        }
+      }
+    }
+
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好呀!",
+        movies:["海贼王", "肖申克的救赎", "葫芦娃"]
+      },
+      components:{
+        'cpn':cpn
+      }
+    })
+  </script>
+</body>
+</html>
