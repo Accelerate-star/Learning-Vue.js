@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/Vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <cpn></cpn>
+    <cpn>
+      <template slot-scope="slot">
+        <span v-for="item in slot.data">
+          {{item}} -
+        </span>
+      </template>
+    </cpn>
+  </div>
+  <template id='cpn'>
+    <div>
+      <slot :data="movies">
+        <ul>
+          <li v-for="item in movies">{{item}}</li>
+        </ul>
+      </slot>
+      
+    </div>
+  </template>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好呀!"
+      },
+      components:{
+        cpn:{
+          template:'#cpn',
+        },
+        data() {
+          return {
+            movies:['Javascript', 'Java', 'C++', 'C#', 'python']
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>
